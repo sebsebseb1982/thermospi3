@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {map} from 'rxjs/operators';
-import {Breakpoints, BreakpointObserver} from '@angular/cdk/layout';
-import {SensorsService} from "../data/sensors.service";
-import any = jasmine.any;
+import {SensorsService} from "../common/data/sensors.service";
+import {Observable} from "rxjs";
+import {ISensor} from "../common/data/data.models";
 
 @Component({
   selector: 'app-humidity',
@@ -10,17 +9,12 @@ import any = jasmine.any;
   styleUrls: ['./humidity.component.css']
 })
 export class HumidityComponent implements OnInit {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards;
+  sensors: Observable<ISensor[]>;
 
-  constructor(private breakpointObserver: BreakpointObserver, private sensorsService: SensorsService) {
+  constructor(private sensorsService: SensorsService) {
   }
 
   ngOnInit() {
-
-
-    this.cards = this.sensorsService.getSensors();
-
-
+    this.sensors = this.sensorsService.getSensorsByType('radio-temperature-humidity');
   }
 }

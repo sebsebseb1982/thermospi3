@@ -12,10 +12,13 @@ import { TemperaturesComponent } from './temperatures/temperatures.component';
 import { HumidityStatusComponent } from './home/charts/humidity-status/humidity-status.component';
 import { TemperatureStatusComponent } from './home/charts/temperature-status/temperature-status.component';
 import {TitleService} from "./common/title.service";
-import {DataModule} from "./data/data.module";
+import {DataModule} from "./common/data/data.module";
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {CookieService} from "ngx-cookie-service";
+import { HumidityOneSensorComponent } from './humidity/charts/humidity-one-sensor/humidity-one-sensor.component';
+import {ChartModule} from "angular-highcharts";
+import { TemperaturesOneSensorComponent } from './temperatures/charts/temperatures-one-sensor/temperatures-one-sensor.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import {CookieService} from "ngx-cookie-service";
     TemperaturesComponent,
     HumidityStatusComponent,
     TemperatureStatusComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    HumidityOneSensorComponent,
+    TemperaturesOneSensorComponent
   ],
   imports: [
     DataModule,
@@ -44,7 +49,8 @@ import {CookieService} from "ngx-cookie-service";
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule
   ],
   providers: [TitleService, CookieService],
   bootstrap: [AppComponent]
