@@ -11,6 +11,8 @@ import { HumidityComponent } from './humidity/humidity.component';
 import { TemperaturesComponent } from './temperatures/temperatures.component';
 import { HumidityStatusComponent } from './home/charts/humidity-status/humidity-status.component';
 import { TemperatureStatusComponent } from './home/charts/temperature-status/temperature-status.component';
+import {TitleService} from "./common/title.service";
+import {DataModule} from "./data/data.module";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { TemperatureStatusComponent } from './home/charts/temperature-status/tem
     TemperatureStatusComponent
   ],
   imports: [
+    DataModule,
     BrowserModule,
     MatCardModule,
     MatSidenavModule,
@@ -35,7 +38,11 @@ import { TemperatureStatusComponent } from './home/charts/temperature-status/tem
     MatGridListModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [TitleService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(titleService: TitleService) {
+    titleService.init();
+  }
+}

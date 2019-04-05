@@ -13,15 +13,24 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    data: {
+      title: 'Accueil'
+    }
   },
   {
     path: 'temperatures',
-    component: TemperaturesComponent
+    component: TemperaturesComponent,
+    data: {
+      title: 'Températures'
+    }
   },
   {
     path: 'humidity',
-    component: HumidityComponent
+    component: HumidityComponent,
+    data: {
+      title: 'Humidité'
+    }
   }
 ];
 
