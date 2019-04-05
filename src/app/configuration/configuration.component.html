@@ -1,0 +1,21 @@
+<form [formGroup]="configurationForm" novalidate (ngSubmit)="onBlur()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Configuration</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="password" placeholder="Clé API mLab" formControlName="mLabAPIKey" (blur)="onBlur()">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="password" placeholder="Clé API domotique" formControlName="domoticAPIKey" (blur)="onBlur()">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

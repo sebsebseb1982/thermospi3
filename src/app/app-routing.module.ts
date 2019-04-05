@@ -4,6 +4,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HomeComponent} from "./home/home.component";
 import {TemperaturesComponent} from "./temperatures/temperatures.component";
 import {HumidityComponent} from "./humidity/humidity.component";
+import {ConfigurationComponent} from "./configuration/configuration.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,13 @@ const routes: Routes = [
     component: HumidityComponent,
     data: {
       title: 'Humidité'
+    }
+  },
+  {
+    path: 'configuration',
+    component: ConfigurationComponent,
+    data: {
+      title: 'Configuration'
     }
   }
 ];

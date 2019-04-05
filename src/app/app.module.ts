@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MatCardModule, MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule, MatListModule, MatGridListModule, MatMenuModule} from "@angular/material";
+import {MatCardModule, MatSidenavModule, MatToolbarModule, MatButtonModule, MatIconModule, MatListModule, MatGridListModule, MatMenuModule, MatInputModule, MatSelectModule, MatRadioModule} from "@angular/material";
 import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HomeComponent } from './home/home.component';
@@ -13,6 +13,9 @@ import { HumidityStatusComponent } from './home/charts/humidity-status/humidity-
 import { TemperatureStatusComponent } from './home/charts/temperature-status/temperature-status.component';
 import {TitleService} from "./common/title.service";
 import {DataModule} from "./data/data.module";
+import { ConfigurationComponent } from './configuration/configuration.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {CookieService} from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {DataModule} from "./data/data.module";
     HumidityComponent,
     TemperaturesComponent,
     HumidityStatusComponent,
-    TemperatureStatusComponent
+    TemperatureStatusComponent,
+    ConfigurationComponent
   ],
   imports: [
     DataModule,
@@ -36,9 +40,13 @@ import {DataModule} from "./data/data.module";
     MatIconModule,
     MatListModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
-  providers: [TitleService],
+  providers: [TitleService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
