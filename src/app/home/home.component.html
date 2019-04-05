@@ -1,0 +1,11 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Accueil</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <app-temperature-status></app-temperature-status>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <app-humidity-status></app-humidity-status>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
