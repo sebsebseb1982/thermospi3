@@ -23,7 +23,7 @@
     "@angular/router": "~7.2.0",
     "angular-highcharts": "^7.2.0",
     "core-js": "^2.5.4",
-    "highcharts": "^7.1.0",
+    "highcharts": "7.0.3",
     "lodash": "^4.17.11",
     "ngx-cookie-service": "^2.1.0",
     "rxjs": "~6.3.3",

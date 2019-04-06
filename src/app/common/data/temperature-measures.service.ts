@@ -16,4 +16,8 @@ export class TemperatureMeasuresService {
   public getMeasuresBySensor(sensor: ISensor): Observable<ITemperatureMeasure[]> {
     return this.http.get<ITemperatureMeasure[]>(`https://api.mlab.com/api/1/databases/thermospi2/collections/temperatures?q={"sensorId": "${sensor.id}"}&s={"date": 1}&apiKey=${this.cookieService.get('mLabAPIKey')}`);
   }
+
+  public getAllMeasures(): Observable<ITemperatureMeasure[]> {
+    return this.http.get<ITemperatureMeasure[]>(`https://api.mlab.com/api/1/databases/thermospi2/collections/temperatures?s={"date": 1}&apiKey=${this.cookieService.get('mLabAPIKey')}`);
+  }
 }

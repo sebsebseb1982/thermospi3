@@ -19,6 +19,7 @@ import {CookieService} from "ngx-cookie-service";
 import { HumidityOneSensorComponent } from './humidity/charts/humidity-one-sensor/humidity-one-sensor.component';
 import {ChartModule} from "angular-highcharts";
 import { TemperaturesOneSensorComponent } from './temperatures/charts/temperatures-one-sensor/temperatures-one-sensor.component';
+import { TemperaturesAllSensorsComponent } from './temperatures/charts/temperatures-all-sensors/temperatures-all-sensors.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TemperaturesOneSensorComponent } from './temperatures/charts/temperatur
     TemperatureStatusComponent,
     ConfigurationComponent,
     HumidityOneSensorComponent,
-    TemperaturesOneSensorComponent
+    TemperaturesOneSensorComponent,
+    TemperaturesAllSensorsComponent
   ],
   imports: [
     DataModule,
