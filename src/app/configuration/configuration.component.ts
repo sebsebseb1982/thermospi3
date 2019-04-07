@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {CookieService} from "ngx-cookie-service";
 
-const mLabAPIKey='mLabAPIKey';
-const domoticAPIKey='domoticAPIKey';
+const mLabAPIKey = 'mLabAPIKey';
+const domoticAPIKey = 'domoticAPIKey';
 
 @Component({
   selector: 'app-configuration',
@@ -15,10 +15,13 @@ export class ConfigurationComponent {
     mLabAPIKey: this.cookieService.get(mLabAPIKey),
     domoticAPIKey: this.cookieService.get(domoticAPIKey),
   });
-  constructor(private fb: FormBuilder, private cookieService: CookieService) {}
+
+  constructor(private fb: FormBuilder, private cookieService: CookieService) {
+  }
 
   onBlur() {
-    this.cookieService.set(mLabAPIKey, this.configurationForm.get(mLabAPIKey).value);
-    this.cookieService.set(domoticAPIKey, this.configurationForm.get(domoticAPIKey).value);
+    let expires = new Date(new Date().setFullYear(new Date().getFullYear() + 100));
+    this.cookieService.set(mLabAPIKey, this.configurationForm.get(mLabAPIKey).value, expires);
+    this.cookieService.set(domoticAPIKey, this.configurationForm.get(domoticAPIKey).value, expires);
   }
 }

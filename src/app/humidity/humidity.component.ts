@@ -15,6 +15,6 @@ export class HumidityComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.sensors = this.sensorsService.getSensorsByType('radio-temperature-humidity');
+    this.sensors = this.sensorsService.getSensorsByType(['humidity']);
   }
 }
